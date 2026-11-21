@@ -44,3 +44,4 @@ The FastAPI backend serves the production frontend build directly from `frontend
 python tests/test_api.py
 ```
 # ecotrack
+# ecotrack
