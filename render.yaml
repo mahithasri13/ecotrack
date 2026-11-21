@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: ecotrack-api
+    name: ecotrack-1
     runtime: python
     plan: free
     rootDir: backend
@@ -8,4 +8,14 @@ services:
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: FRONTEND_ORIGINS
-        sync: false
+        value: https://ecotrack-dashboard-mahithasri13.onrender.com
+
+  - type: web
+    name: ecotrack-dashboard-mahithasri13
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://ecotrack-1.onrender.com
