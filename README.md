@@ -43,5 +43,16 @@ The FastAPI backend serves the production frontend build directly from `frontend
 ```bash
 python tests/test_api.py
 ```
+
+## Deploying to Netlify and Render
+
+The repository includes a Netlify build configuration (`netlify.toml`) and a Render Blueprint (`render.yaml`).
+
+1. Push this repository to GitHub.
+2. In Netlify, import the repository. The frontend build settings are read from `netlify.toml`. Note the site URL Netlify assigns.
+3. In Render, create a Blueprint from the same repository and deploy the `ecotrack-api` web service. Set `FRONTEND_ORIGINS` to the Netlify site URL (for example, `https://your-site.netlify.app`).
+4. In Netlify's site settings, add `VITE_API_URL` with the Render service's base URL (for example, `https://ecotrack-api.onrender.com`), then trigger a new deploy.
+
+The public frontend URL is assigned by Netlify after deployment. The Render service URL hosts the API, with interactive API documentation at `/docs`.
 # ecotrack
 # ecotrack

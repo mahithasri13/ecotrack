@@ -1,0 +1,22 @@
+# Python artifacts and local runtime data
+__pycache__/
+*.py[cod]
+backend/ecotrack.db
+
+# Frontend dependencies and builds
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# Editor settings
+.vscode/
+
+# Generated project reports and extracted media
+EcoTrack_*.docx
+EcoTrack_*.pdf
+EcoTrack_*.html
+!frontend/index.html
+extracted_media/
+report_assets/
+report_summary.html
+test_print.html
